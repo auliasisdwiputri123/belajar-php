@@ -45,11 +45,18 @@ mysqli_close($con);
         <tr>
             <th>NIM</th>
             <th>Nama</th>
+            <th>Tempat lahir</th>
+            <th>action</th>
         </tr>
         <?php foreach($mahasiswa as $value): ?>
         <tr>
             <td><?php echo $value["nim"]; ?></td>
             <td><?php echo $value["nama"]; ?></td>
+            <td><?php echo $value["tempat_lahir"]; ?></td>
+            <td>
+                <a href="<?php echo "update.php?id=".$value["id"]; ?>">Edit</a>
+                <a href="<?php echo "delete.php?id=".$value["id"]; ?>">Delete</a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </table>
